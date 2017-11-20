@@ -26,7 +26,7 @@ class Compl(object):
 
     def __str__(self):
        # return '{0.real}{0.imag}j'.format(self.real, self.imag)
-        return '(%g, %gj)' % (self.real, self.imag)
+        return '(%g + %gj)' % (self.real, self.imag)
 
     # Сложение
     def __add__(self, second):
