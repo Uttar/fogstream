@@ -6,12 +6,12 @@
 Сопряжение + conjugate
 Возведение в степень
 Извлечение корня
-
 Алгебраическая форма
 Тригонометрическая форма
 Экспоненциальная форма
 '''
 
+# Функция для вычисление факториала. Для дальнейшего использования при возведении в степень
 def factorial(n):
     if n == 0:
         return 1
@@ -36,9 +36,9 @@ class Compl(object):
     # Вычитание
     def __sub__(self, second):
         return Compl(self.real - second.real,
-
                      self.imag - second.imag)
 
+    # Умножение
     def __mul__(self, second):
         return Compl(self.real * second.real - self.imag * second.imag,
                      self.imag * second.real + self.real * second.imag)
@@ -53,18 +53,19 @@ class Compl(object):
     def conjugate(self):
         return Compl(self.real, - self.imag)
 
-    # Возведение в степень n
+    # Возведение в степень n, извлечение корня. Реализовать бином Ньютона https://function-x.ru/complex_numbers3.html
 
 
 
     # Модуль
-    def __abs__(self):
+    def mod(self):
         return (self.real ** 2 + self.imag ** 2)**(0.5)
 
+    # Тригонометрическая форма
     def trigonom_forma(self):
-        return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
+        return '%.2f*(cos(f)+i*sin(f))' % (self.mod())
+    #    return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
 
-
-a = Compl(1, 2)
-b = Compl(3, 4)
-print(a.trigonom_forma())
+    # Показательная форма
+    def exp_forma(self):
+        return '%.2f*e^if' % (self.mod())
