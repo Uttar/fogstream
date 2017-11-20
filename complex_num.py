@@ -17,7 +17,7 @@ def factorial(n):
         return 1
     return factorial(n - 1) * n
 
-class Compl(object):
+class compl(object):
 
 
     def __init__(self, real, imag=0):
@@ -68,4 +68,4 @@ class Compl(object):
 
     # Показательная форма
     def exp_forma(self):
-        return '%.2f*e^if' % (self.mod())
+        return '%.2f*e^i*f' % (self.mod())
