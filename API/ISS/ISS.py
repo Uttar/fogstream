@@ -1,7 +1,7 @@
 import urllib.request
 import urllib.error
 import json
-import re
+
 
 def get_iss():
     try:
@@ -25,15 +25,14 @@ def get_iss():
         print('Координаты МКС: %s:%s' % (lat, lon))
         exit()
 
-    components = j['results'][0]['address_components']
-    country = town = None
-    for c in components:
-        if "country" in c['types']:
-            country = c['long_name']
-        if "postal_town" in c['types']:
-            town = c['long_name']
-    print(town, country)
-    return town, country
+    place = None
+    if j['status'] == 'OK':
+        place = j['results'][1]['formatted_address']
+
+    print('Координаты МКС: %s:%s' % (lat, lon))
+    if place:
+        print(place)
+    return lat, lon
 
 
 get_iss()
