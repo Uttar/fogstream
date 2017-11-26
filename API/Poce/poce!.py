@@ -1,7 +1,3 @@
-'''
-Получить номер покемона и выдать краткую информацию о нём
-'''
-
 import urllib.request
 import urllib.error
 import json
