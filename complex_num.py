@@ -63,8 +63,14 @@ class compl(object):
 
     # Тригонометрическая форма
     def trigonom_forma(self):
+<<<<<<< HEAD
+        return '%f(cos(f)+isin(f))' % (self.__abs__())
+     #   return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
+
+=======
         return '%.2f*(cos(f)+i*sin(f))' % (self.mod())
     #    return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
+>>>>>>> 8960990568975b1e21f3dd529f8853e0809d7908
 
     # Показательная форма
     def exp_forma(self):
