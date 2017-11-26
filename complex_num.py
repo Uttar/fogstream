@@ -62,7 +62,8 @@ class Compl(object):
         return (self.real ** 2 + self.imag ** 2)**(0.5)
 
     def trigonom_forma(self):
-        return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
+        return '%f(cos(f)+isin(f))' % (self.__abs__())
+     #   return '%f(cos%s+isin%s)' % (self.__abs__(), chr(981), chr(981))
 
 
 a = Compl(1, 2)
