@@ -45,7 +45,7 @@ def get_iss():
 
 while True:
     with open('result.txt', 'a', encoding='utf-8', errors=None) as f:
-        t = time.strftime("%d_%b_%Y_%H-%M ", time.gmtime())
+        t = time.strftime("%d_%b_%Y_%H-%M ")
         text = t + str(get_iss()) + '\n'
         f.write(text)
         f.close()
